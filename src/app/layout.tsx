@@ -1,6 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import SideMenu from '@/views/SideMenu'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -15,8 +17,32 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en">
-      <body className={inter.className}>{children}</body>
+    <html lang="en" className='bg-black text-white'>
+      <body className={inter.className}>
+        <div className='border-b'>
+          <div className="flex h-16 items-center px-4 container max-auto">
+            <div className="flex items-center">
+              Photos App
+              {/* <TeamSwitcher /> */}
+              {/* <MainNav className="mx-6" /> */}
+            </div>
+            <div className="ml-auto flex items-center space-x-4">
+              <Avatar>
+                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarFallback>CN</AvatarFallback>
+              </Avatar>
+              {/* <Search /> */}
+              {/* <UserNav /> */}
+            </div>
+          </div>
+        </div>
+        <div className='flex'>
+          <SideMenu />
+          <div className='w-full px-4 pt-12'>
+            {children}
+          </div>
+        </div>
+      </body>
     </html>
   )
 }
