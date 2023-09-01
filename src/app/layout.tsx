@@ -3,6 +3,9 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import SideMenu from '@/views/SideMenu'
+import Image from 'next/image'
+
+
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -28,7 +31,7 @@ export default function RootLayout({
             </div>
             <div className="ml-auto flex items-center space-x-4">
               <Avatar>
-                <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                <AvatarImage src="/avatar1.jpg" alt="@shadcn" />
                 <AvatarFallback>CN</AvatarFallback>
               </Avatar>
               {/* <Search /> */}

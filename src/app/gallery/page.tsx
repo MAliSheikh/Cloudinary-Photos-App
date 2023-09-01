@@ -4,18 +4,20 @@ import cloudinary from 'cloudinary'
 import { CldImage } from 'next-cloudinary'  
 import CloudinaryImage from './CloudinaryImage'
 
-interface searchResult {
-    public_id: string
+export interface searchResult {
+    public_id: string;
+    tags: string[];
 }
 
 export default async function GalleryPage() {
     const results = (await cloudinary.v2.search
         .expression('resource_type:image')
         .sort_by('created_at', 'desc')
-        .max_results(10000)
+        .with_field('tags')
+        .max_results(1)
         .execute()) as {resources: searchResult[]}
 
-    console.log(results)
+    // console.log(results)
 
     return (
         <section>
@@ -29,7 +31,7 @@ export default async function GalleryPage() {
                         results.resources.map((result) => (
                             <CloudinaryImage 
                             key={result.public_id}
-                            src={result.public_id}
+                            imageData={result}
                             width='400'
                             height='300'
                             alt='Gallery Image'
