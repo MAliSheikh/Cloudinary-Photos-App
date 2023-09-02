@@ -2,6 +2,7 @@ import React from 'react'
 import cloudinary from 'cloudinary'
 import CloudinaryImage from '@/app/gallery/CloudinaryImage'
 import { searchResult } from '../gallery/page'
+import { ForceRefrest } from '@/components/forceRefrest'
 
 export default async function FavoritePage() {
     const results = (await cloudinary.v2.search
@@ -15,10 +16,12 @@ export default async function FavoritePage() {
 
     return (
         <section>
+            <ForceRefrest />
             <div className='flex flex-col gap-8'>
                 <div className='flex justify-between'>
                 <h1 className='text-4xl font-bold'>Favorite Images</h1>
                 </div>
+
                 <div className='grid grid-cols-4 gap-4'>
                     {
                         results.resources.map((result) => (
