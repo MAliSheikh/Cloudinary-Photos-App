@@ -12,10 +12,9 @@ export function ImageMenu() {
             <DropdownMenuTrigger asChild>
                 <Button variant="ghost" className="hover:bg-black rounded p-0 w-8 h-8 bg-black text-white"><Menu /></Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-32">
+            <DropdownMenuContent className="w-40">
                 <DropdownMenuItem>
                     <FolderPlus className="mr-2 h-4 w-4" />
-                    <User className="mr-2 h-4 w-4" />
                     <span>Add to Album</span>
                 </DropdownMenuItem>
             </DropdownMenuContent>
