@@ -13,6 +13,7 @@ import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FolderPlus } from "lucide-react"
 import { useState } from "react"
+import { AddImageToAlbum } from "./ui/actions"
 
 export function AddToAlbum({ image }: { image: searchResult }) {
     const [AlbumName, setAlbumName] = useState('')
@@ -38,21 +39,17 @@ export function AddToAlbum({ image }: { image: searchResult }) {
                         <Label htmlFor="name" className="text-right">
                             Album
                         </Label>
-                        <Input onChange={(e) => setAlbumName(e.target.value)}
+                        <Input onChange={(e) => setAlbumName(e.currentTarget.value)}
                             id="album-name" value={AlbumName} className="col-span-3" />
                     </div>
-                    {/* <div className="grid grid-cols-4 items-center gap-4">
-                        <Label htmlFor="username" className="text-right">
-                            Username
-                        </Label>
-                        <Input id="username" value="@peduarte" className="col-span-3" />
-                    </div> */}
+
                 </div>
                 <DialogFooter>
                     <Button
-                        onClick={() => {
+                        onClick={async () => {
                             console.log(image)
                             setOpen(false)
+                            await AddImageToAlbum(image, AlbumName)
                         }}
                         type="submit">Add To Album</Button>
                 </DialogFooter>
