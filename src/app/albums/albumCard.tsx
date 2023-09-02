@@ -26,7 +26,7 @@ export function AlbumCard({ folder }: { folder: Folder }) {
 
             </CardContent>
             <CardFooter className="flex justify-between">
-                <Button asChild className="bg-white text-black rounded">
+                <Button asChild className="bg-white text-black rounded hover:bg-white">
                     <Link href={`/albums/${folder.name}`}>View Album</Link>
                 </Button>
             </CardFooter>

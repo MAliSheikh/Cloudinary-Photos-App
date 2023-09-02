@@ -2,7 +2,7 @@ import React from 'react'
 import cloudinary from 'cloudinary'
 import CloudinaryImage from '@/components/CloudinaryImage'
 import { searchResult } from '../gallery/page'
-import { ForceRefrest } from '@/components/forceRefrest'
+import { ForceRefresh } from '@/components/forceRefrest'
 import FavoriteList from './favoriteList'
 
 export default async function FavoritePage() {
@@ -17,7 +17,7 @@ export default async function FavoritePage() {
 
     return (
         <section>
-            <ForceRefrest />
+            <ForceRefresh />
             <div className='flex flex-col gap-8'>
                 <div className='flex justify-between'>
                     <h1 className='text-4xl font-bold'>Favorite Images</h1>
