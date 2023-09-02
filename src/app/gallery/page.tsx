@@ -1,8 +1,7 @@
 import React from 'react'
 import UploadButton from './upload-button'
 import cloudinary from 'cloudinary'
-import CloudinaryImage from './CloudinaryImage'
-import { ImageGrid } from '@/components/imageGrid';
+import GalleryGrid from './galleryGrid';
 
 export interface searchResult {
     public_id: string;
@@ -18,7 +17,7 @@ export default async function GalleryPage() {
         .execute()) as { resources: searchResult[] }
 
     // console.log(results)
- 
+
 
     return (
         <section>
@@ -27,7 +26,9 @@ export default async function GalleryPage() {
                     <h1 className='text-4xl font-bold'>Gallery</h1>
                     <UploadButton />
                 </div>
-                <ImageGrid images={results.resources} />
+                <GalleryGrid
+                    images={results.resources}
+                />
             </div>
         </section>
     )

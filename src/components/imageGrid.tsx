@@ -1,10 +1,14 @@
-import CloudinaryImage from "@/app/gallery/CloudinaryImage";
+'use client'
 import { searchResult } from "@/app/gallery/page";
+import { ReactNode } from "react";
 
 
 const MAXCOLUMNS = 4;
 
-export function ImageGrid({ images }: { images: searchResult[] }) {
+export function ImageGrid({ images, getImage }: {
+    images: searchResult[];
+    getImage: (imageData: searchResult) => ReactNode;
+}) {
     function getColums(colIndex: number) {
         return images.filter(
             (resource, idx) => idx % MAXCOLUMNS === colIndex
@@ -21,15 +25,7 @@ export function ImageGrid({ images }: { images: searchResult[] }) {
             ].map((column, idx) => (
                 <div key={idx} className='flex flex-col gap-4'>
                     {
-                        column.map((result) => (
-                            <CloudinaryImage
-                                key={result.public_id}
-                                imageData={result}
-                                width='400'
-                                height='300'
-                                alt='Gallery Image'
-                            />
-                        ))
+                        column.map(getImage)
                     }
                 </div>
             ))}
