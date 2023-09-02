@@ -30,7 +30,6 @@ export default async function GalleryPage() {
                     {
                         results.resources.map((result) => (
                             <CloudinaryImage 
-                            path='/gallery'
                             key={result.public_id}
                             imageData={result}
                             width='400'
