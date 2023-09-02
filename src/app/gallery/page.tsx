@@ -1,7 +1,6 @@
 import React from 'react'
 import UploadButton from './upload-button'
 import cloudinary from 'cloudinary'
-import { CldImage } from 'next-cloudinary'  
 import CloudinaryImage from './CloudinaryImage'
 
 export interface searchResult {
@@ -14,7 +13,7 @@ export default async function GalleryPage() {
         .expression('resource_type:image')
         .sort_by('created_at', 'desc')
         .with_field('tags')
-        .max_results(30)
+        .max_results(100000)
         .execute()) as {resources: searchResult[]}
 
     // console.log(results)
