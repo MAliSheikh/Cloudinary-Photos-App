@@ -1,3 +1,4 @@
+import { searchResult } from "@/app/gallery/page"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -11,39 +12,49 @@ import {
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { FolderPlus } from "lucide-react"
+import { useState } from "react"
 
-export function AddToAlbum() {
+export function AddToAlbum({ image }: { image: searchResult }) {
+    const [AlbumName, setAlbumName] = useState('')
+    const [open, setOpen] = useState(false)
+
     return (
-        <Dialog>
+        <Dialog open={open} onOpenChange={setOpen} >
             <DialogTrigger asChild>
-                <Button variant="secondary">
+                <Button variant="ghost" className="bg-black hover:bg-black">
                     <FolderPlus className="mr-2 h-4 w-4" />
                     <span>Add to Album</span>
                 </Button>
             </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
+            <DialogContent className="sm:max-w-[425px] bg-black text-white">
                 <DialogHeader>
-                    <DialogTitle>Edit profile</DialogTitle>
+                    <DialogTitle>Add To Album</DialogTitle>
                     <DialogDescription>
-                        Make changes to your profile here. Click save when your done.
+                        Type an album yoy want to move this image into
                     </DialogDescription>
                 </DialogHeader>
                 <div className="grid gap-4 py-4">
                     <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="name" className="text-right">
-                            Name
+                            Album
                         </Label>
-                        <Input id="name" value="Pedro Duarte" className="col-span-3" />
+                        <Input onChange={(e) => setAlbumName(e.target.value)}
+                            id="album-name" value={AlbumName} className="col-span-3" />
                     </div>
-                    <div className="grid grid-cols-4 items-center gap-4">
+                    {/* <div className="grid grid-cols-4 items-center gap-4">
                         <Label htmlFor="username" className="text-right">
                             Username
                         </Label>
                         <Input id="username" value="@peduarte" className="col-span-3" />
-                    </div>
+                    </div> */}
                 </div>
                 <DialogFooter>
-                    <Button type="submit">Save changes</Button>
+                    <Button
+                        onClick={() => {
+                            console.log(image)
+                            setOpen(false)
+                        }}
+                        type="submit">Add To Album</Button>
                 </DialogFooter>
             </DialogContent>
         </Dialog>

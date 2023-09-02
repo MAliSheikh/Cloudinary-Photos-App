@@ -5,8 +5,9 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuShortc
 import Menu from "./icons/menu"
 import {FolderPlus} from 'lucide-react'
 import { AddToAlbum } from "./AddToAlbum"
+import { searchResult } from "@/app/gallery/page"
 
-export function ImageMenu() {
+export function ImageMenu({image}:{image: searchResult}) {
     return (
         <div className='absolute top-2 right-2'>
         <DropdownMenu>
@@ -14,10 +15,8 @@ export function ImageMenu() {
                 <Button variant="ghost" className="hover:bg-black rounded p-0 w-8 h-8 bg-black text-white"><Menu /></Button>
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40">
-                <DropdownMenuItem>
-                    {/* <FolderPlus className="mr-2 h-4 w-4" />
-                    <span>Add to Album</span> */}
-                    <AddToAlbum />
+                <DropdownMenuItem asChild>
+                    <AddToAlbum image={image}/>
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
