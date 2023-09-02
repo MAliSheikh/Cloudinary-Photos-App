@@ -2,10 +2,11 @@
 import React, { ComponentProps, useTransition } from 'react'
 import { CldImage, CldImageProps } from 'next-cloudinary'
 import Heart from '@/components/icons/heart'
-import { SetAsFavoriteAction } from './actions'
-import { searchResult } from './page'
+import { SetAsFavoriteAction } from '../app/gallery/actions'
+import { searchResult } from '../app/gallery/page'
 import FullHeart from '@/components/icons/fullheart'
 import { useState } from 'react'
+import { ImageMenu } from './imageMenu'
 
 
 const CloudinaryImage = (props: {
@@ -24,7 +25,7 @@ const CloudinaryImage = (props: {
             {IsFavorited ?
                 (
                     <FullHeart
-                        className='absolute top-2 right-2 hover:text-white text-red-500 cursor-pointer'
+                        className='absolute top-2 left-2 hover:text-white text-red-500 cursor-pointer'
                         onClick={() => {
                             onUnheart?.(imageData)
                             setIsfavorited(false)
@@ -41,9 +42,10 @@ const CloudinaryImage = (props: {
                                 SetAsFavoriteAction(imageData.public_id, true)
                             })
                         }}
-                        className='absolute top-2 right-2 hover:text-red-500 cursor-pointer'
+                        className='absolute top-2 left-2 hover:text-red-500 cursor-pointer'
                     />
                 )}
+                <ImageMenu />
         </div>
     )
 }

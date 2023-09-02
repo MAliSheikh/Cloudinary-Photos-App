@@ -1,6 +1,6 @@
 import React from 'react'
 import cloudinary from 'cloudinary'
-import CloudinaryImage from '@/app/gallery/CloudinaryImage'
+import CloudinaryImage from '@/components/CloudinaryImage'
 import { searchResult } from '../gallery/page'
 import { ForceRefrest } from '@/components/forceRefrest'
 import FavoriteList from './favoriteList'

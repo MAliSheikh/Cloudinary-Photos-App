@@ -1,13 +1,12 @@
 'use client'
 
 import React from 'react'
-import CloudinaryImage from './CloudinaryImage'
+import CloudinaryImage from '../../components/CloudinaryImage'
 import { ImageGrid } from '@/components/imageGrid';
 import { searchResult } from './page';
 
 
 export default function GalleryGrid({ images }: { images: searchResult[] }) {
-
     return (
         <ImageGrid images={images}
             getImage={(imageData: searchResult) => {
