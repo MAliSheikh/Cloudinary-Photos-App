@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuShortcut, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Menu from "./icons/menu"
 import {FolderPlus} from 'lucide-react'
+import { AddToAlbum } from "./AddToAlbum"
 
 export function ImageMenu() {
     return (
@@ -14,8 +15,9 @@ export function ImageMenu() {
             </DropdownMenuTrigger>
             <DropdownMenuContent className="w-40">
                 <DropdownMenuItem>
-                    <FolderPlus className="mr-2 h-4 w-4" />
-                    <span>Add to Album</span>
+                    {/* <FolderPlus className="mr-2 h-4 w-4" />
+                    <span>Add to Album</span> */}
+                    <AddToAlbum />
                 </DropdownMenuItem>
             </DropdownMenuContent>
         </DropdownMenu>
