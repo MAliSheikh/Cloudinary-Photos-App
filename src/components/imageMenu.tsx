@@ -4,7 +4,7 @@ import Menu from "./icons/menu"
 import { AddToAlbum } from "./AddToAlbum"
 import { searchResult } from "@/app/gallery/page"
 import { useState } from "react"
-import Link  from "next/link"
+import Link from "next/link"
 import { Pencil } from "lucide-react"
 
 export function ImageMenu({ image }: { image: searchResult }) {
@@ -18,13 +18,15 @@ export function ImageMenu({ image }: { image: searchResult }) {
                 </DropdownMenuTrigger>
                 <DropdownMenuContent className="w-40 bg-black text-white hover:bg-black">
                     <DropdownMenuItem asChild>
-                        <AddToAlbum image={image} onClose={() => setOpen(false)}/>
+                        <AddToAlbum image={image} onClose={() => setOpen(false)} />
                     </DropdownMenuItem>
                     <DropdownMenuItem asChild>
-                        <Link href={`/edit?publicId=${encodeURIComponent(image.public_id)}`} className="ml-2 cursor-pointer">
-                            <Pencil className="mr-2 h-4 w-4"/>
-                            Edit
+                        <Button className="cursor-pointer flex justify-start pl-4" asChild>
+                            <Link href={`/edit?publicId=${encodeURIComponent(image.public_id)}`}>
+                                <Pencil className="mr-2 h-4 w-4" />
+                                Edit
                             </Link>
+                        </Button>
                     </DropdownMenuItem>
                 </DropdownMenuContent>
             </DropdownMenu>
