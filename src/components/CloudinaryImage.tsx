@@ -1,10 +1,10 @@
 'use client'
 import React, { ComponentProps, useTransition } from 'react'
 import { CldImage, CldImageProps } from 'next-cloudinary'
-import Heart from '@/components/icons/heart'
+import Heart from '../components/icons/heart'
 import { SetAsFavoriteAction } from '../app/gallery/actions'
 import { searchResult } from '../app/gallery/page'
-import FullHeart from '@/components/icons/fullheart'
+import FullHeart from '../components/icons/fullheart'
 import { useState } from 'react'
 import { ImageMenu } from './imageMenu'
 

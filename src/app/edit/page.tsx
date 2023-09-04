@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
 import { CldImage } from "next-cloudinary"
+import { buildUrl } from 'cloudinary-build-url';
 import { useState } from "react"
 
 
@@ -16,6 +17,7 @@ export default function EditPage({ searchParams: { publicId }, }:
 
     const [pendingPrompt, setPendingPrompt] = useState('')
     const [prompt, setPrompt] = useState('')
+
 
     return (
         <section>
@@ -30,8 +32,8 @@ export default function EditPage({ searchParams: { publicId }, }:
                         Clear All
                     </Button>
                     <div className="flex flex-col gap-4">
-                        <Button onClick={() => { 
-                            setTransformation('generative-fill') 
+                        <Button onClick={() => {
+                            setTransformation('generative-fill')
                             setPrompt(pendingPrompt)
                         }}
                             className="rounded bg-white text-black hover:bg-white">
@@ -40,7 +42,7 @@ export default function EditPage({ searchParams: { publicId }, }:
                         <Label>Prompt</Label>
                         <Input value={pendingPrompt} onChange={(e) => setPendingPrompt(e.currentTarget.value)} />
                     </div>
-                    <Button onClick={() => { setTransformation('blur') }}
+                    {/* <Button onClick={() => { setTransformation('blur') }}
                         className="rounded bg-white text-black hover:bg-white">
                         Apply Blur
                     </Button>
@@ -55,7 +57,7 @@ export default function EditPage({ searchParams: { publicId }, }:
                     <Button onClick={() => { setTransformation('border') }}
                         className="rounded bg-white text-black hover:bg-white">
                         Border
-                    </Button>
+                    </Button> */}
 
                 </div>
 
@@ -70,16 +72,16 @@ export default function EditPage({ searchParams: { publicId }, }:
                             alt="Some Image"
                             crop="pad"
                             fillBackground={{
-                                    prompt,
-                                }}
+                                prompt,
+                            }}
                         />
                     }
-                    {transformation === 'blur' &&
+                    {/* {transformation === 'blur' &&
                         <CldImage
                             src={publicId}
                             width={1200}
-                            height={800}
-                            // blur={'1200'}
+                            height={1400}
+                            blur={'1200'}
                             alt="Some Image"
                         />
                     }
@@ -109,7 +111,7 @@ export default function EditPage({ searchParams: { publicId }, }:
                             border="40px_solid_purple"
                             alt="Some Image"
                         />
-                    }
+                    } */}
 
                 </div>
             </div>
