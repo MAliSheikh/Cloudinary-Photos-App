@@ -30,7 +30,10 @@ export default function EditPage({ searchParams: { publicId }, }:
                         Clear All
                     </Button>
                     <div className="flex flex-col gap-4">
-                        <Button onClick={() => { setTransformation('generative-fill') }}
+                        <Button onClick={() => { 
+                            setTransformation('generative-fill') 
+                            setPrompt(pendingPrompt)
+                        }}
                             className="rounded bg-white text-black hover:bg-white">
                             Apply Generative Fill
                         </Button>
