@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { CldUploadButton,CldImage } from 'next-cloudinary';
 import { useState } from 'react';
 
-export interface UploadImage{
+interface UploadImage{
   event: 'success';
   info: {
     public_id: string;
