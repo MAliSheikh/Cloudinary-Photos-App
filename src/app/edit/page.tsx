@@ -78,8 +78,8 @@ export default function EditPage({ searchParams: { publicId }, }:
                         <CldImage
                             src={publicId}
                             width={1200}
-                            height={1400}
-                            blur={'1200'}
+                            height={800}
+                            // blur={'1200'}
                             alt="Some Image"
                         />
                     }
