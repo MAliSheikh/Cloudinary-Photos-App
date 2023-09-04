@@ -2,7 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
-::selection {
-    background: red;   
-    
+/* Add this code to show selection outline on hover */
+*::selection:hover {
+    outline: 1px solid blue;
 }
