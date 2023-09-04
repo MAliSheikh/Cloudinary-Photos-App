@@ -2,6 +2,7 @@ import React from 'react'
 import UploadButton from './upload-button'
 import cloudinary from 'cloudinary'
 import GalleryGrid from './galleryGrid';
+import SearchForm from './searchForm';
 
 export interface searchResult {
     public_id: string;
@@ -26,6 +27,8 @@ export default async function GalleryPage() {
                     <h1 className='text-4xl font-bold'>Gallery</h1>
                     <UploadButton />
                 </div>
+                <SearchForm />
+
                 <GalleryGrid
                     images={results.resources}
                 />

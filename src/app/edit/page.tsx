@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button"
 import { CldImage } from "next-cloudinary"
 import { useState } from "react"
 
+
 export default function EditPage({ searchParams: { publicId }, }:
     { searchParams: { publicId: string } }
 ) {
