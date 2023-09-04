@@ -1,7 +1,13 @@
 'use server'
  
-import { searchResult } from '@/app/gallery/page'
 import cloudinary from 'cloudinary'
+
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
+
+
 
 export async function AddImageToAlbum(image: searchResult, album: string) {
     await cloudinary.v2.api.create_folder(album)

@@ -1,9 +1,13 @@
 "use client";
 
-import { searchResult } from "@/app/gallery/page";
+
 import CloudinaryImage from "@/components/CloudinaryImage";
 import { ImageGrid } from "@/components/imageGrid";
 
+interface searchResult {
+  public_id: string;
+  tags: string[];
+}
 
 export default function AlbumGrid({ images }: { images: searchResult[] }) {
   return (

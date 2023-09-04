@@ -1,9 +1,16 @@
 'use client'
 import React from 'react'
 import { CldUploadButton, CldImage } from 'next-cloudinary';
-import { UploadImage } from '../page';
 import { Button } from '@/components/ui/button';
 import { useRouter } from 'next/navigation';
+
+interface UploadImage{
+    event: 'success';
+    info: {
+      public_id: string;
+    }; 
+  
+  }
 
 const UploadButtton = () => {
     const router = useRouter()

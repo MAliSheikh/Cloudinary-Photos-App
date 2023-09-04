@@ -11,8 +11,11 @@ import {
 } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
 import { Label } from "@/components/ui/label"
-import { Folder } from "./page"
 import Link from "next/link"
+
+interface Folder {
+    name: string; path: string;
+}
 
 
 export function AlbumCard({ folder }: { folder: Folder }) {

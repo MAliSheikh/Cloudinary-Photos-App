@@ -2,10 +2,14 @@ import { Button } from "@/components/ui/button"
 import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuShortcut, DropdownMenuTrigger } from "@/components/ui/dropdown-menu"
 import Menu from "./icons/menu"
 import { AddToAlbum } from "./AddToAlbum"
-import { searchResult } from "@/app/gallery/page"
 import { useState } from "react"
 import Link from "next/link"
 import { Pencil } from "lucide-react"
+
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
 
 export function ImageMenu({ image }: { image: searchResult }) {
     const [open, setOpen] = useState(false)

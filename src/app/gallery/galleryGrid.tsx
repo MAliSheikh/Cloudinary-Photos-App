@@ -3,7 +3,11 @@
 import React from 'react'
 import CloudinaryImage from '../../components/CloudinaryImage'
 import { ImageGrid } from '@/components/imageGrid';
-import { searchResult } from './page';
+
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
 
 
 export default function GalleryGrid({ images }: { images: searchResult[] }) {

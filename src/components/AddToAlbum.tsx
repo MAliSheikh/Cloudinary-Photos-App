@@ -1,4 +1,3 @@
-import { searchResult } from "@/app/gallery/page"
 import { Button } from "@/components/ui/button"
 import {
     Dialog,
@@ -14,6 +13,11 @@ import { Label } from "@/components/ui/label"
 import { FolderPlus } from "lucide-react"
 import { useState } from "react"
 import { AddImageToAlbum } from "./ui/actions"
+
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
 
 export function AddToAlbum({ image, onClose }: {
     image: searchResult, onClose: () => void

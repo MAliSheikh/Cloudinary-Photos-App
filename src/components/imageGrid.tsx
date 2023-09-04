@@ -1,7 +1,11 @@
 'use client'
-import { searchResult } from "@/app/gallery/page";
+
 import { ReactNode } from "react";
 
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
 
 const MAXCOLUMNS = 4;
 

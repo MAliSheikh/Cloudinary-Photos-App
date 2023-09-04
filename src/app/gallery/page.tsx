@@ -4,7 +4,7 @@ import cloudinary from 'cloudinary'
 import GalleryGrid from './galleryGrid';
 import SearchForm from './searchForm';
 
-export interface searchResult {
+interface searchResult {
     public_id: string;
     tags: string[];
 }

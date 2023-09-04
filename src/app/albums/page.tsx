@@ -3,7 +3,7 @@ import React from 'react'
 import cloudinary from 'cloudinary'
 import { AlbumCard } from './albumCard';
 
-export interface Folder {
+interface Folder {
     name: string; path: string;
 }
 

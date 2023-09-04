@@ -1,7 +1,12 @@
-import { searchResult } from "@/app/gallery/page";
+
 import cloudinary from "cloudinary";
 import AlbumGrid from "./albumGrid";
 import {ForceRefresh} from '@/components/forceRefrest'
+
+interface searchResult {
+  public_id: string;
+  tags: string[];
+}
 
 export default async function GalleryPage({
   params: { albumName },

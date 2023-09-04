@@ -3,7 +3,11 @@ import { Button } from '@/components/ui/button'
 import cloudinary from 'cloudinary'
 import Heart from '@/components/icons/heart'
 import Link from 'next/link'
-import { Folder } from '@/app/albums/page'
+
+interface Folder {
+  name: string; path: string;
+}
+
 
 async function SideMenu() {
   const { folders } = await cloudinary.v2.api.root_folders() as {

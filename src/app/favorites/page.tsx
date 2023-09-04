@@ -1,9 +1,12 @@
 import React from 'react'
 import cloudinary from 'cloudinary'
-import CloudinaryImage from '@/components/CloudinaryImage'
-import { searchResult } from '../gallery/page'
 import { ForceRefresh } from '@/components/forceRefrest'
 import FavoriteList from './favoriteList'
+
+interface searchResult {
+    public_id: string;
+    tags: string[];
+}
 
 export default async function FavoritePage() {
     const results = (await cloudinary.v2.search
