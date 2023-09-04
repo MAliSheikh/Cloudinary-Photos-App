@@ -25,7 +25,8 @@ export default function RootLayout({
         <div className='border-b'>
           <div className="flex h-16 items-center px-4 container max-auto">
             <div className="flex items-center">
-              Photos App
+              <Image src='/album.png' width={50} height={50} alt='icon of this photo album app'/>
+              Pictures Hub
               {/* <TeamSwitcher /> */}
               {/* <MainNav className="mx-6" /> */}
             </div>
